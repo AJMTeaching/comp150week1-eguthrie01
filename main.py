@@ -3,22 +3,40 @@
 # Lab 1
 # Problem 1
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
-1. my_list=[1,5,'apple',20.5]
-2. my_list=[1,5,'apple',20.5]
-    print(my_list[2])
-3. my_list=[1,5,'apple',20.5]
-    my_list.append(10)
-    print(my_list)
-4. my_list=[1,5,'apple',20.5]
-    my_list.remove(20.5)
-    print(my_list)
-5. my_list
-    my_list.reverse()
-    print(my_list)
+my_list=[1,5,'apple',20.5]
+print(my_list[2])
+
+my_list.append(10)
+print(my_list)
+
+my_list.remove(20.5)
+print(my_list)
+
+my_list.reverse()
+print(my_list)
 
 # Problem 2
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
+my_dict_person={'name':'John','age':'30','job':'teacher'}
+print(my_dict_person['job'])
 
+def add_pair (my_dict_person):
+    my_dict_person['city'] = 'Paris'
+    print(my_dict_person)
+add_pair(my_dict_person)
+print("Updated dictionary outside function:", my_dict_person)
+
+def remove_key (my_dict_person):
+    if 'age' in my_dict_person:
+        del my_dict_person['age']
+    return(my_dict_person)
+remove_key (my_dict_person)
+print ("Updated dictionary outside function:", my_dict_person)
+
+def iterate_items(my_dict_person):
+    for key, value in my_dict_person.items():
+        print(f"Key: {key}, Value: {value}")
+iterate_items(my_dict_person)
 # -----------------------------------------------------------------------------
 
 
@@ -36,6 +54,12 @@ def test(did_pass):
 
 # Function 1: count_vowels
 def count_vowels(s: str) -> int:
+    vowels= 'aeiouAEIOU'
+    vowel_count=0
+    for char in s:
+        if char.lower() in vowels:
+            vowel_count +=1
+    return vowel_count
     """
     Count the number of vowels in a string.
 
