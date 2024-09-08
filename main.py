@@ -3,6 +3,18 @@
 # Lab 1
 # Problem 1
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
+1. my_list=[1,5,'apple',20.5]
+2. my_list=[1,5,'apple',20.5]
+    print(my_list[2])
+3. my_list=[1,5,'apple',20.5]
+    my_list.append(10)
+    print(my_list)
+4. my_list=[1,5,'apple',20.5]
+    my_list.remove(20.5)
+    print(my_list)
+5. my_list
+    my_list.reverse()
+    print(my_list)
 
 # Problem 2
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
