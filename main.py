@@ -88,8 +88,28 @@ def test_count_vowels():
 
 
 # Function 2: merge_lists
-def merge_lists(list1: list, list2: list) -> list:
-    """
+def merge_lists(list1, list2):
+    x = 0
+    y = 0
+    merge_list = []
+    while x < len(list1) and y < len(list2):
+        if list1[x] < list2[y]:
+            merge_list.append(list1[x])
+            x += 1
+        else:
+            merge_list.append(list2[y])
+            y += 1
+    while x < len(list1):
+        merge_list.append(list1[x])
+        x += 1
+    while y < len(list2):
+        merge_list.append(list2[y])
+        y += 1
+    
+    return merge_list
+
+
+"""
     Merge two sorted lists into a single sorted list.
 
     Parameters:
@@ -100,7 +120,7 @@ def merge_lists(list1: list, list2: list) -> list:
     - list: A new sorted list containing all elements from list1 and list2
     """
     # TODO: Implement this function
-    pass
+pass
 
 
 # Unit Tests for merge_lists
@@ -121,6 +141,11 @@ def test_merge_lists():
 
 # Function 3: word_lengths
 def word_lengths(words: list) -> list:
+    lengths = []
+    for string in words:
+        length = len(string)
+        lengths.append(length)
+    return lengths
     """
     Get the lengths of words in a list.
 
@@ -141,13 +166,17 @@ def test_word_lengths():
     test(lengths == [5, 5, 6])
     test(word_lengths([]) == [])
     test(word_lengths(["word"]) == [4])
-    test(word_lengths(["short", "mediummm", "longesttttt"]) == [5, 8, 10])
+    test(word_lengths(["short", "mediummm", "longesttttt"]) == [5, 8, 11])
     test(word_lengths(["", "a", "ab", "abc"]) == [0, 1, 2, 3])
     test(word_lengths(["  ", "a b", " c "]) == [2, 3, 3])
 
 
 # Function 4: reverse_string
 def reverse_string(s: str) -> str:
+    reversed_str = ""
+    for char in s:
+        reversed_str = char + reversed_str
+    return reversed_str
     """
     Reverse a string.
 
@@ -176,6 +205,11 @@ def test_reverse_string():
 
 # Function 5: intersection
 def intersection(list1: list, list2: list) -> list:
+    intersection = []
+    for item1 in list1:
+        if item1 in list2 and item1 not in intersection:
+            intersection.append(item1)
+    return intersection
     """
     Find the intersection of two lists.
 
